@@ -1,0 +1,60 @@
+
+
+<html>
+  <body>
+    <h1>Clock Example</h1>
+    <p>
+      The current time is: <span id="time_text_span">00:00:00 AM</span>
+    </p>
+    <p>
+      <button onclick="start_stop(this)">Pause</button>
+    </p>
+    <script>
+      //<![CDATA[
+
+function display_time() {
+    var d = new Date();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+    var ampm;
+    if (h >= 12) {
+	ampm = "PM";
+	h -= 12;
+    } else {
+	ampm = "AM";
+    }
+    if (m < 10) {
+	m = "0" + m;
+    }
+    if (s < 10) {
+	s = "0" + s;
+    }
+
+    var time_text_span = document.getElementById('time_text_span');
+    var new_time_text = document.createTextNode(h + ":" + m + ":" + s + " " + ampm);
+    time_text_span.replaceChild(new_time_text, time_text_span.firstChild);
+}
+
+var clock_int_obj = window.setInterval("display_time()", 1000);
+
+function start_stop(button_node) {
+  if (clock_int_obj != null) {
+    clearInterval(clock_int_obj);
+    clock_int_obj = null;
+
+    var new_button_text = document.createTextNode("Start");
+    button_node.replaceChild(new_button_text, button_node.firstChild);
+  } else {
+    clock_int_obj = setInterval("display_time()", 1000);
+
+    var new_button_text = document.createTextNode("Pause");
+    button_node.replaceChild(new_button_text, button_node.firstChild);
+  }
+}
+
+//]]>
+    </script>
+  </body>
+</html>
+

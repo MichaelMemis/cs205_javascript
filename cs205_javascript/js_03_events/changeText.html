@@ -1,0 +1,36 @@
+<html>
+<body>
+<script>
+
+    function changeBackgroundColor(obj, color) {
+        if (color == 'default') {
+            obj.removeAttribute("style");
+        } else {
+            obj.setAttribute("style", "background-color: " + color + ";");
+        }
+    }
+
+</script>
+
+    <div
+        onmouseover="changeBackgroundColor(this, 'green');"
+        onmouseout="changeBackgroundColor(this, 'default');"
+        onclick="changeBackgroundColor(this,'yellow');"
+        >
+      Press me to change my text.
+    </div>
+        <div
+                onmouseover="changeBackgroundColor(this, 'red');"
+                onmouseout="changeBackgroundColor(this, 'blue');"
+                onclick="changeBackgroundColor(this,'purple');"
+                ondblclick="changeBackgroundColor(this, 'brown');"
+        >
+            More text with different colors
+    </div>
+
+
+
+
+</body>
+</html>
+

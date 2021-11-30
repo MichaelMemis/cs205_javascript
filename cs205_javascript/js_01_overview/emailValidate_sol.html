@@ -1,0 +1,32 @@
+<html>
+<head>
+<script type="text/javascript">
+
+function validate_form(thisform) {
+    var s = thisform.email.value;
+    atPos = s.indexOf("@");
+    pPos = s.lastIndexOf(".");
+
+    console.log("User Email:"+s+", atPos: "+atPos+", pPos: "+pPos)
+
+    if ((atPos == -1) || (pPos == -1) || (atPos>pPos)){
+
+        alert("You have entered a bad email address!");
+        return false;
+    }
+    alert("Your email is legit!")
+    return true;
+
+}
+
+ </script>
+ </head>
+
+ <body>
+   <form action="" onsubmit="return validate_form(this);" method="post">
+     Email: <input type="text" name="email" size="30">
+       <input type="submit" value="Submit">
+   </form>
+</body>
+
+</html>

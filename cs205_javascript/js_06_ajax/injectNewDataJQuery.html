@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#myDiv").load("newData.txt");
+  });
+});
+</script>
+</head>
+<body>
+
+<div id="myDiv"><h2>Here is some data...</h2></div>
+<button>Get External Content using JQuery</button>
+
+</body>
+</html>
+

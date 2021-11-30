@@ -1,0 +1,18 @@
+<html>
+  <body>
+    <script>
+
+       function confirmLink(linkobj) {
+          var href_text = linkobj.getAttribute("href");
+          return confirm("Do you really want to go to: " + href_text);
+       }
+
+    </script>
+         
+        <a href="http://www.ithaca.edu" onclick="return confirmLink(this);">
+          Ithaca College
+        </a>
+
+  </body>
+</html>
+

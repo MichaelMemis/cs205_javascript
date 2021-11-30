@@ -1,0 +1,22 @@
+
+
+<html>
+  <body onmousemove="handleMouseMove(event);">
+    <script src="moveText.js"></script>
+    <div id="myid" 
+         style="position: absolute; left: 100px; top: 100px;"
+         onmousedown="handleMouseDown(event, this);"
+         onmouseup="handleMouseUp();"
+    >
+      This is draggable text.
+    </div>
+    <div id="otherid" 
+         style="position: absolute; left: 100px; top: 200px;"
+         onmousedown="handleMouseDown(event, this);"
+         onmouseup="handleMouseUp();"
+    >
+      So is this.
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Runner Animation</title>
+    <script language="JavaScript">
+
+        var runner = new Array(6);
+        var curRunner = 0;
+        var startRunning;
+
+        runner[0] = "img/runner0.jpg";
+        runner[1] = "img/runner1.jpg";
+        runner[2] = "img/runner2.jpg";
+        runner[3] = "img/runner3.jpg";
+        runner[4] = "img/runner4.jpg";
+        runner[5] = "img/runner5.jpg";
+
+        function marathon() {
+            curRunner = curRunner + 1;
+            if (curRunner >= 6){
+                curRunner = 0
+            }
+            document.animation.src = runner[curRunner]
+        }
+
+    </script>
+</head>
+
+<body>
+<p><img src="img/runner0.jpg" name="animation"></p>
+
+<form>
+    <input type="button" name="run" value=" Run "
+           onClick="si = setInterval('marathon()', 100);">
+    <input type="button" name="stop" value= " Stop "
+           onClick="clearInterval(si);">
+</form>
+</body>
+</html>
+

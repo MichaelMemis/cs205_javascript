@@ -1,0 +1,9 @@
+{
+  "name": "Doug",
+  "class": "advanced web programming",
+  "students": [
+    {"name" : "Ali"},
+    {"name ": "Bernie"},
+    {"name ": "Candice"}
+  ]
+}

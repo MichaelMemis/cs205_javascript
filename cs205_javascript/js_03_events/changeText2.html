@@ -1,0 +1,35 @@
+<html>
+  <body>
+    <script>
+      function changeText(obj) {
+          var new_text = prompt('New text:', '');
+          obj.innerHTML = new_text;
+       }
+
+       function changeBackgroundColor(obj, color) {
+          if (color == 'default') {
+              obj.removeAttribute("style");
+          } else {
+              obj.setAttribute("style", "background-color: " + color + ";");
+          }
+      }
+
+    </script>
+
+    <div onclick="changeText(this);" 
+         onmouseover="changeBackgroundColor(this, 'green');"
+         onmouseout="changeBackgroundColor(this, 'default');"
+    > 
+      Press me to change my text. 
+    </div>
+    
+    <div onclick="changeText(this);"
+         onmouseover="changeBackgroundColor(this, 'yellow');"
+         onmouseout="changeBackgroundColor(this, 'default');"
+    >
+      Press me to change my text. 
+    </div>
+         
+  </body>
+</html>
+

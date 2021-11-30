@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create Object from JSON String</h2>
+
+<p id="demo"></p>
+
+<script>
+var text = '{"cars": [{"make": "Delorean","model": "DMC-12", "price":25000},'+
+           '{"make": "Lincoln","model": "Futura"},'+
+           '{"make": "Cadillac","model": "MillerMeteor"}]}';
+
+console.log("Text:", text)
+obj = JSON.parse(text);
+console.log("Object:", obj)
+var carID = 1;
+document.getElementById("demo").innerHTML =
+obj.cars[carID].make + " " + obj.cars[carID].model;
+</script>
+
+</body>
+</html>

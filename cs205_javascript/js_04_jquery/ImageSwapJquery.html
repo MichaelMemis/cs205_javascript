@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            $("img").mouseover(function(){
+                $("img").fadeOut(1000,function(){
+                    $("img").attr("src", "img/hb1.jpg").fadeIn(1000);
+
+                });
+            });
+
+            $("img").mouseout(function(){
+                $("img").fadeOut(1000,function(){
+                    $("img").attr("src", "img/hb2.jpg").fadeIn(1000);
+
+                });
+            });
+
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+<img width="300" src="img/hb2.jpg">
+
+</body>
+
+
+</html>

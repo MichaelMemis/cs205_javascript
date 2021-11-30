@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <body onload="setupToggles();">
+    <h1>A Tree-like List View</h1>
+    <script>
+      function toggleSublist(event) {
+        if (!event) {
+          event = window.event;
+        }
+
+        if (!this.hasChildNodes()) {
+          return;
+        }
+        var sublists = this.getElementsByTagName('ul');
+        if (!sublists) {
+          return;
+        }
+        var sublist = sublists[0];
+        if (sublist.style.display == "block" ) {
+          sublist.style.display = "none";
+          this.childNodes[0].childNodes[0].nodeValue = "+";
+        } else {
+          sublist.style.display = "block";
+          this.childNodes[0].childNodes[0].nodeValue = "-";
+        }
+      }
+
+      function setupToggles() {
+        var li_nodes = document.getElementsByTagName('li');
+        var idx;
+        for (idx = 0; idx < li_nodes.length; idx++) {
+           li_nodes[idx].onclick = toggleSublist;
+        }
+      }
+    </script>
+
+    <ul>
+      <li><span>-</span> One
+	<ul>
+	  <li><span>-</span> 1
+	    <ul>
+              <li><span>-</span>Singular</li>
+	      <li><span>-</span>Once</li>
+	      <li><span>-</span>Only</li>
+	  </ul></li>
+	  <li><span>-</span> I</li>
+	  <li><span>-</span> Uno</li>
+	</ul>
+      </li>
+      <li><span>-</span> Two
+	<ul>
+	  <li ><span>-</span> 2
+	    <ul>
+              <li><span>-</span>Double</li>
+	      <li><span>-</span>Twice</li>
+	      <li><span>-</span>Couple</li>
+          </ul></li>
+	  <li><span>-</span> II</li>
+	  <li><span>-</span> Dos</li>
+	</ul>
+      </li>
+      <li><span>-</span> Three
+	<ul>
+	  <li><span>-</span> 3
+	    <ul>
+              <li><span>-</span>Triple</li>
+	      <li><span>-</span>Thrice</li>
+	      <li><span>-</span>Few</li>
+	  </ul></li>
+	  <li><span>-</span> III</li>
+	  <li><span>-</span> Tres</li>
+	</ul>
+      </li>
+      <li><span>-</span> Four
+	<ul>
+	  <li><span>-</span> 4
+	    <ul>
+              <li><span>-</span>Quadruple</li>
+	      <li><span>-</span>Fourth</li>
+	      <li><span>-</span>Many</li>
+	  </ul></li>
+	  <li><span>-</span> IV</li>
+	  <li><span>-</span> Quatro</li>
+	</ul>
+      </li>
+    </ul>
+  </body>
+</html>
+
